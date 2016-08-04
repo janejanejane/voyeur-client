@@ -15,6 +15,12 @@ module.exports = {
     path: path.join( __dirname, 'public' )
   },
 
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
