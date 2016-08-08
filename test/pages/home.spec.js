@@ -9,4 +9,9 @@ describe ( '<Home />', () => {
     const wrapper = shallow( <Home /> );
     expect( wrapper.find( 'button' ) ).to.have.length( 1 );
   });
+
+  it ( 'should have an image element', () => {
+    const wrapper = shallow( <Home /> );
+    expect( wrapper.find( 'img' ) ).to.have.length( 1 );
+  });
 });
