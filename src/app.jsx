@@ -4,7 +4,7 @@ import {
   handleLoginResponse
 } from './actions';
 
-import AppBar from 'material-ui/lib/app-bar';
+// import AppBar from 'material-ui/lib/app-bar';
 
 import { Row, Col } from 'elemental';
 
