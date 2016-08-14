@@ -5,7 +5,7 @@ const AWS = window.AWS;
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -50,7 +50,7 @@ const requireAuth = bindCheckAuth( store, ( nextState, transition ) => {
 
 render( (
   <Provider store={store}>
-    <Router history={history}>
+    <Router history={browserHistory}>
       <Route component={App} path='/' name='Designer'>
         <IndexRoute component={HomePage} name='Home' onEnter={requireAuth}/>
         <Route component={LoginPage} name='LoginPage' path='/login'/>
