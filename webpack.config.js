@@ -1,5 +1,6 @@
 var path = require( 'path' );
 var webpack = require( 'webpack' );
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devTool: 'eval',
@@ -27,7 +28,8 @@ module.exports = {
     new webpack.IgnorePlugin(/vertx/),
     new webpack.ProvidePlugin({
       "_": "underscore"
-    })
+    }),
+    new HtmlWebpackPlugin()
   ],
 
   resolve: {
