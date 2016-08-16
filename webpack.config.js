@@ -2,7 +2,9 @@ var path = require( 'path' );
 var webpack = require( 'webpack' );
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+var validate = require( 'webpack-validator' );
+
+var config = {
   devTool: 'eval',
   debug: true,
   entry: [
@@ -14,6 +16,13 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.join( __dirname, 'public' )
+  },
+
+  devServer: {
+    hot: true,
+    inline: true,
+    port: 8080,
+    historyApiFallback: true
   },
 
   externals: {
@@ -80,3 +89,5 @@ module.exports = {
     ]
   }
 };
+
+module.exports = validate( config );
