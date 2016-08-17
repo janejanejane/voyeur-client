@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var validate = require( 'webpack-validator' );
 
 var config = {
-  devTool: 'eval',
+  // devTool: 'eval',
   debug: true,
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
@@ -43,15 +43,15 @@ var config = {
 
   resolve: {
     extensions: [ '', '.js', '.jsx', '.coffee', '.less', '.ttf', '.eot', '.woff'],
-    moduleDirectories: [
-      'node_modules',
-      'bower_components'
-    ]
+    // moduleDirectories: [
+    //   'node_modules',
+    //   'bower_components'
+    // ]
   },
 
-  resolveLoader: {
-    moduleDirectories: [ 'node_modules' ]
-  },
+  // resolveLoader: {
+  //   moduleDirectories: [ 'node_modules' ]
+  // },
 
   module: {
     noParse: [
