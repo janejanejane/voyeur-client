@@ -1,21 +1,23 @@
 var path = require( 'path' );
 var webpack = require( 'webpack' );
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 var validate = require( 'webpack-validator' );
 
 var config = {
-  // devTool: 'eval',
+  devtool: 'eval-source-map',
   debug: true,
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
+    'react-hot-loader',
     './src/router'
   ],
 
   output: {
     filename: 'bundle.js',
-    path: path.join( __dirname, 'public' )
+    path: path.join( __dirname, 'public' ),
+    publicPath: '/public/'
   },
 
   devServer: {
@@ -33,8 +35,12 @@ var config = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.IgnorePlugin(/vertx/),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV' : JSON.stringify( 'development' )
+    }),
     new webpack.ProvidePlugin({
       "_": "underscore"
     }),
