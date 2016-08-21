@@ -21,6 +21,7 @@ var config = {
   },
 
   devServer: {
+    contentBase: path.join( __dirname, 'public' ),
     hot: true,
     inline: true,
     port: 8080,
