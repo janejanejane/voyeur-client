@@ -7,7 +7,7 @@
     "start": "./node_modules/.bin/gulp watch",
     "build": "./node_modules/.bin/gulp build",
     "dev": "node server.js",
-    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./",
+    "dev:hot": "webpack-dev-server --watch --content-base ./",
     "test": "mocha -w test/helpers/browser.js test/*.spec.js"
   },
   "keywords": [

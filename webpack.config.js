@@ -10,7 +10,6 @@ var config = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
-    'react-hot-loader',
     './src/router'
   ],
 
@@ -25,7 +24,14 @@ var config = {
     hot: true,
     inline: true,
     port: 8080,
-    historyApiFallback: true
+    historyApiFallback: true,
+    stats: {
+      progress: true,
+      colors: true,
+      displayErrorDetails: true,
+      displayCached: true,
+    },
+    publicPath: '/public/'
   },
 
   externals: {
@@ -76,10 +82,7 @@ var config = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: [ 'react', 'es2015', 'stage-2' ]
-        }
+        loaders: [ 'react-hot', 'babel' ]
       },
       {
         test: /\.html$/,
