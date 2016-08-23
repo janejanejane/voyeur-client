@@ -5,9 +5,13 @@ const config = require( './webpack.config' );
 new WebpackDevServer(webpack( config ), {
   publicPath: config.output.publicPath,
   hot: true,
-  historyApiFallback:true,
+  inline: true,
+  historyApiFallback: true,
   stats: {
-    colors: true
+    progress: true,
+    colors: true,
+    displayErrorDetails: true,
+    displayCached: true,
   }
 }).listen( 8000, 'localhost', ( err ) => {
   if ( err ) {
