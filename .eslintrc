@@ -8,6 +8,10 @@
     "react/require-extension": "off",
     "jsx-quotes": 1,
     "react/jsx-": 0,
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
     "arrow-body-style": [
       "error",
       "always"
