@@ -4,14 +4,14 @@ import { expect } from 'chai';
 
 import Home from '../../src/pages/home';
 
-describe ( '<Home />', () => {
-  it ( 'should have a button element', () => {
+describe( '<Home />', () => {
+  it( 'should have a button element', () => {
     const wrapper = shallow( <Home /> );
     expect( wrapper.find( 'button' ) ).to.have.length( 1 );
-  });
+  } );
 
-  it ( 'should have an image element', () => {
+  it( 'should have an image element', () => {
     const wrapper = shallow( <Home /> );
     expect( wrapper.find( 'img' ) ).to.have.length( 1 );
-  });
-});
+  } );
+} );
