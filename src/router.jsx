@@ -43,17 +43,17 @@ const requireAuth = bindCheckAuth( store, ( nextState, transition ) => {
     '/login',
     {
       pathname: '/login',
-      nextPathname: nextState.location.pathname
+      nextPathname: nextState.location.pathname,
     }
   );
-});
+} );
 
 render( (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route component={App} path='/' name='Designer'>
-        <IndexRoute component={HomePage} name='Home' onEnter={requireAuth}/>
-        <Route component={LoginPage} name='LoginPage' path='/login'/>
+      <Route component={App} path="/" name="Designer">
+        <IndexRoute component={HomePage} name="Home" onEnter={requireAuth} />
+        <Route component={LoginPage} name="LoginPage" path="/login" />
       </Route>
     </Router>
   </Provider>
