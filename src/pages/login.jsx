@@ -1,40 +1,39 @@
-import React, { PropTypes } from 'react';
+import React, { createClass, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import {IndexLink, Link} from 'react-router';
+import { Row, Col, Button } from 'elemental';
 
 import { loginUser, checkLoginState, handleLoginResponse } from '../actions';
 
-import { Row, Col, Button } from 'elemental';
 
-const LoginPage  = React.createClass({
+const LoginPage = createClass( {
   displayName: 'LoginPage',
   handleClick() {
     const { dispatch } = this.props;
 
     // dispatch( loginUser() );
-    FB.login(function( response ) {
+    FB.login( ( response ) => {
       handleLoginResponse( dispatch )( response );
-    });
+    } );
   },
   render() {
     return (
       <Row>
         <Col>
           <p>Our privacy, for your facebook privacy. Fair is fair.</p>
-          <Button type='primary' onClick={this.handleClick}> Facebook Login </Button>
+          <Button type="primary" onClick={this.handleClick}> Facebook Login </Button>
         </Col>
       </Row>
     );
-  }
-});
+  },
+} );
 
 function mapStateToProps( state ) {
   const {
-    auth
+    auth,
   } = state;
 
   return {
-    auth
+    auth,
   };
 }
 
