@@ -5,6 +5,9 @@
     "mocha": true
   },
   "extends": "airbnb",
+  "globals": {
+    "FB": true
+  },
   "rules": {
     "react/require-extension": "off",
     "jsx-quotes": 1,
