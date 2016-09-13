@@ -8,7 +8,7 @@
     "build": "./node_modules/.bin/gulp build",
     "dev": "node server.js",
     "dev:hot": "webpack-dev-server --progress --colors --watch --display-error-details --display-cached --content-base ./public",
-    "test": "mocha -w test/helpers/browser.js test/*.spec.js"
+    "test": "mocha -w -R nyan test/helpers/browser.js test/*.spec.js"
   },
   "keywords": [
     "voyeur",
