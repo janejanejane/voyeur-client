@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import FBLogin from './actions/fb';
 import {
   handleLoginResponse,
 } from './actions';
@@ -10,6 +11,10 @@ import { Row, Col } from 'elemental';
 
 const App = React.createClass( {
   displayName: 'LoginPage',
+
+  componentWillMount() {
+    <FBLogin />;
+  },
 
   render() {
     return (

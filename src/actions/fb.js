@@ -39,4 +39,4 @@ const FbLogin = React.createClass( {
   );
 } );
 
-export default FB;
+export default FBLogin;
