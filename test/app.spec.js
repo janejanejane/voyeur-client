@@ -14,4 +14,10 @@ describe( 'app', () => {
       expect( component.calledOnce ).to.equal( true );
     } );
   } );
+
+  describe( 'render', () => {
+    const app = shallow( <App /> );
+
+    expect( app.find( 'h1' ).text() ).to.equal( 'Voyeur Cam' );
+  } );
 } );
