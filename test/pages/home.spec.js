@@ -14,4 +14,10 @@ describe( '<Home />', () => {
     const wrapper = shallow( <Home /> );
     expect( wrapper.find( 'img' ) ).to.have.length( 1 );
   } );
+
+  describe( 'render', () => {
+    const hpme = shallow( <Home /> );
+
+    expect( home.find( 'a' ).text() ).to.equal( 'Logout' );
+  } );
 } );
