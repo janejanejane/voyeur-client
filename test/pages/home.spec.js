@@ -5,19 +5,21 @@ import { expect } from 'chai';
 import Home from '../../src/pages/home';
 
 describe( '<Home />', () => {
-  it( 'should have a button element', () => {
-    const wrapper = shallow( <Home /> );
-    expect( wrapper.find( 'button' ) ).to.have.length( 1 );
-  } );
-
-  it( 'should have an image element', () => {
-    const wrapper = shallow( <Home /> );
-    expect( wrapper.find( 'img' ) ).to.have.length( 1 );
-  } );
-
   describe( 'render', () => {
-    const hpme = shallow( <Home /> );
+    it( 'should have a button element', () => {
+      const wrapper = shallow( <Home /> );
+      expect( wrapper.find( 'button' ) ).to.have.length( 1 );
+    } );
 
-    expect( home.find( 'a' ).text() ).to.equal( 'Logout' );
+    it( 'should have an image element', () => {
+      const wrapper = shallow( <Home /> );
+      expect( wrapper.find( 'img' ) ).to.have.length( 1 );
+    } );
+
+    it( 'should have a logout link', () => {
+      const hpme = shallow( <Home /> );
+
+      expect( home.find( 'a' ).text() ).to.equal( 'Logout' );
+    } );
   } );
 } );
