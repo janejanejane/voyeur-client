@@ -17,7 +17,7 @@ describe( '<Home />', () => {
     } );
 
     it( 'should have a logout link', () => {
-      const hpme = shallow( <Home /> );
+      const home = shallow( <Home /> );
 
       expect( home.find( 'a' ).text() ).to.equal( 'Logout' );
     } );
