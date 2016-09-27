@@ -9,7 +9,7 @@ describe( 'app', () => {
   describe( 'componentWillMount', () => {
     it( 'loads once', () => {
       const component = spy( App.prototype, 'componentDidMount' );
-      mount( <App {...props} /> );
+      mount( <App /> );
 
       expect( component.calledOnce ).to.equal( true );
     } );
