@@ -15,4 +15,11 @@ describe( 'actions', () => {
     };
     expect( actions.recievedUserNotAuthorized() ).toEqual( expectedAction );
   } );
+
+  it( 'should get last image', () => {
+    const expectedAction = {
+      type: actions.REQUEST_LATEST_IMAGE,
+    };
+    expect( actions.requestLatestImage() ).toEqual( expectedAction );
+  } );
 } );
