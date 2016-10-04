@@ -10,6 +10,7 @@
   },
   "rules": {
     "react/require-extension": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "jsx-quotes": 1,
     "react/jsx-": 0,
     "array-bracket-spacing": [
